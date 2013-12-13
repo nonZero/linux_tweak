@@ -1,7 +1,7 @@
 linux_tweak
 ===========
 
-Structure
+App Structure
 
 main_script.sh - main script
 config - settings for the app
@@ -12,3 +12,10 @@ config - settings for the app
 /data/ - data for twekers to use
 /data/$tweaker_name - folder for $tweaker_name's data
 /logs/ - log folder
+
+Content of /tweakers/
+
+rc.local.sh - tweaker of rc.local file
+fstab.sh - tweaker of fstab file
+power.sh - tweaker of power.sh file
+apt.sh - apt-get tool
