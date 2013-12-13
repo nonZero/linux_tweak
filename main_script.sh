@@ -25,6 +25,8 @@ logdirname=$prefix.$sufix
 
 mkdir ./logs/$logdirname
 
+source ./config
+
 PS3='Please enter your choice: '
 options=("fstab" "rc.local" "power.sh" "apt-get" "Quit")
 select opt in "${options[@]}"
