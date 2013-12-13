@@ -51,14 +51,6 @@ done
 #some basic tweak
 
 
-#Adding auto mounting WD ShareSpace
-
-echo "Adding automount string to fstab..."
-mkdir /mnt/wd
-cp /etc/fstab /etc/fstab.backup
-cat ./fstab/fstab.add >> /etc/fstab
-echo "Automount string added!"
-
 #Adding powersaving options to /etc/acpi/power.sh file
 
 echo "Replacing default power.sh with tweaked power.sh file..."
