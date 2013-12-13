@@ -1,6 +1,6 @@
 #linux_tweak Configuration file
 
-[MAIN]
-first_launch=1
-auto_update_packages=0
-do_dist_update=0
+#MAIN
+first_launch="1"
+auto_update_packages="0"
+do_dist_update="0"
