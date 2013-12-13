@@ -1,0 +1,2 @@
+# Mount network share $folder at $ip
+//$ip/%folder /$mount_point $type rw,uid=$local_user,username=$remote_user,password=$remote_password 0 0
