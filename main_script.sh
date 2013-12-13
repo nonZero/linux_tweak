@@ -23,9 +23,30 @@ prefix=customization.logs
 sufix=$(date +%F)
 logdirname=$prefix.$sufix
 
-mkdir $logdirname
+mkdir ./logs/$logdirname
 
-
+PS3='Please enter your choice: '
+options=("fstab" "rc.local" "power.sh" "apt-get" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "fstab")
+            echo "you chose fstab"
+            ;;
+        "rc.local")
+            echo "rc.local"
+            ;;
+        "power.sh")
+            echo "power.sh"
+            ;;
+        "apt-get")
+            echo "you chose apt-get"
+        "Quit")
+            break
+            ;;
+        *) echo invalid option;;
+    esac
+done
 
 #some basic tweak
 
