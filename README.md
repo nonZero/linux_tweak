@@ -1,7 +1,13 @@
 linux_tweak
 ===========
 
-App Structure
+Linux_Tweak is my attempt to ease my and probably someone elses life with Linux.
+There so many simple steps that you need to take everytime you have a fresh install
+or you just join linux world that I do not understand why it's not simplified yet.
+
+As a fiar example Bluetooth status at startup...you know what I mean right?
+
+--------App Structure--------------------------------
 
 main_script.sh - main script
 config - settings for the app
@@ -13,7 +19,7 @@ config - settings for the app
 /data/$tweaker_name - folder for $tweaker_name's data
 /logs/ - log folder
 
-Content of /tweakers/
+--------Content of /tweakers/------------------------
 
 rc.local.sh - tweaker of rc.local file
 fstab.sh - tweaker of fstab file
