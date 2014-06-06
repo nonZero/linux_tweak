@@ -8,49 +8,42 @@ function app_exit {
     quit
     }
 
+#Launch function
 function app_start {
     touch /logs/main.log
     echo $(date +%F).' '.$time.' '.'App started' >> /logs/main.log
     }
-    
+
+#Generates menus    
 function main_menu {
+    clear
     echo '### Welcome to Linux Tweak Tool ###'
-    echo '### Main Menu ###'
-    }
-#end of function
-
-prefix=customization.logs
-sufix=$(date +%F)
-logdirname=$prefix.$sufix
-
-mkdir ./logs/$logdirname
-
-source ./config
-
+    echo '############ Main Menu ############'
+    echo '############ Ver. 0.2  ############'
+    echo " "
+if [ $1 = "0" ]; then
 PS3='Please enter your choice: '
-options=("fstab" "rc.local" "power.sh" "apt-get" "Quit")
+options=("Scripts" "Debs" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "fstab")
-            echo "you chose fstab"
+        "Scripts")
+            main_menu 1
             ;;
-        "rc.local")
-            echo "rc.local"
+        "Debs")
+            main_menu 2
             ;;
-        "power.sh")
-            echo "power.sh"
-            ;;
-        "apt-get")
-            echo "you chose apt-get"
         "Quit")
             break
             ;;
         *) echo invalid option;;
     esac
 done
+ else
+	echo "Invalid argument. Exiting."
+fi
+    }
 
-#Cleaning Up
+#end of function
 
-#moving all log files
-mv *.log ./$logdirname
+main_menu 0
