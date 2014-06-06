@@ -11,17 +11,12 @@ As a fiar example Bluetooth status at startup...you know what I mean right?
 
 main_script.sh - main script
 config - settings for the app
-/packages/ - folder for packages to install
-/packages/debs/ - deb packages
-/packages/debs/done/ - installed packages
-/tweakers/ - folder for various tweakers
-/data/ - data for twekers to use
-/data/$tweaker_name - folder for $tweaker_name's data
+/debs/ - folder for packages to install
+/debs/done/ - installed packages
+/scripts/ - folder for various tweakers
+/scripts/default/ - tweaks installed with app itself 
+/scripts/plugins/ - tweaks installed by 3rd party apps&packages
+/scripts/custom/ - user scripts
+/inputs/ - data sources for tweakers to use
 /logs/ - log folder
-
---------Content of /tweakers/------------------------
-
-rc.local.sh - tweaker of rc.local file
-fstab.sh - tweaker of fstab file
-power.sh - tweaker of power.sh file
-apt.sh - apt-get tool
+/configs/ - configurations used for tweakers
