@@ -1,4 +1,7 @@
 #!/bin/bash
+#Linux Tweak Tool
+#By Alex Gourenko aka Lord_Phoenix
+#Version 0.1
 
 #Creating functions
 
@@ -44,6 +47,6 @@ done
 fi
     }
 
-#end of function
+#end of functions creation
 
 main_menu 0
