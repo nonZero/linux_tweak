@@ -1,8 +1,0 @@
-#jupiter power saving tool
-ppa:webupd8team/jupiter
-#fingerprint gui
-ppa:fingerprint/fingerprint-gui
-#wine
-ppa:ubuntu-wine/ppa
-#GTHUMB - photo editing/organization tool
-ppa:webupd8team/gthumb
