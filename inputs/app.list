@@ -1,0 +1,8 @@
+# Application List from repositories
+# This file contains application names to be installed
+htop
+iftop
+iotop
+nano
+vim
+lynx
