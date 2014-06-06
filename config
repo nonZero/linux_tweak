@@ -1,7 +1,7 @@
 #linux_tweak Configuration file
-
 #MAIN
 first_launch="1"
+app_terminated="1"
 auto_update_packages="0"
 do_dist_update="0"
 logs_cleanup_days="30"
