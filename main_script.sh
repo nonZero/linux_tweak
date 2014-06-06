@@ -1,22 +1,22 @@
 #!/bin/bash
 
 #Creating functions
-"
-#executing command with logging
 
-function command($command,$file,$message) {
-file=$(date +%F)-$(date +%H:%M:%S)-$command.log
+#Exit function
+function app_exit {
+    echo $(date +%F).' '.$time.' '.'App exits normally' >> /logs/main.log
+    quit
+    }
 
-message="Executing $command"
-cat $message >> $file
-
-$command >> $file
-
-message="$command executed!"
-cat $message >> $file
-
-}
-"
+function app_start {
+    touch /logs/main.log
+    echo $(date +%F).' '.$time.' '.'App started' >> /logs/main.log
+    }
+    
+function main_menu {
+    echo '### Welcome to Linux Tweak Tool ###'
+    echo '### Main Menu ###'
+    }
 #end of function
 
 prefix=customization.logs
