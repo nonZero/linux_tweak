@@ -4,3 +4,6 @@
 first_launch="1"
 auto_update_packages="0"
 do_dist_update="0"
+logs_cleanup_days="30"
+backup_cleanup_days="60"
+remove_debs_after_install="0"
