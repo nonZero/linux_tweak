@@ -6,3 +6,6 @@ iotop
 nano
 vim
 lynx
+cifs-utils
+f2fs-tools
+btrfs-tools
