@@ -1,0 +1,2 @@
+#This file is designed to store repository sources that will be added to /etc/sources.list
+deb http://download.virtualbox.org/virtualbox/debian trusty contrib
