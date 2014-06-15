@@ -14,6 +14,7 @@ function app_exit {
 #Launch function
 function app_start {
     touch /logs/main.log
+    . ./config
     echo $(date +%F).' '.$time.' '.'App started' >> /logs/main.log
     }
 
