@@ -3,9 +3,9 @@
 
 function remap {
 
-default_path=Google\ Drive/Data
+default_path="Google\ Drive/Data"
 
-  if ["$1" <> ""]; then
+  if [ -n "$1" ]; then
    default_path = $1
   fi
 
@@ -36,9 +36,9 @@ function move_data {
   
   cd ~
   
-  $default_path=Google\ Drive/Data
+  $default_path="Google\ Drive/Data"
   
-  if ["$1" <> ""]; then
+  if [ -n "$1" ]; then
    default_path = $1
   fi
   
