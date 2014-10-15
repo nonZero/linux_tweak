@@ -13,19 +13,19 @@ default_path=Google\ Drive/Data
 cd ~
 
 #Mapping Videos folder
-rm -r Videos/ && ln -s $path/Videos/ Videos
+rm -r Videos/ && ln -s $default_path/Videos/ Videos
 echo "Videos folder remaped"
 
 #Mapping Music folder
-rm -r Music/ && ln -s $path/Music/ Music
+rm -r Music/ && ln -s $default_path/Music/ Music
 echo "Music folder remaped"
 
 #Mapping Desktop folder
-rm -r Desktop/ && ln -s $path/Desktop/ Desktop
+rm -r Desktop/ && ln -s $default_path/Desktop/ Desktop
 echo "Desktop folder remaped"
 
 #Mapping Documents folder
-rm -r Documents/ && ln -s $path/Documents/ Documents
+rm -r Documents/ && ln -s $default_path/Documents/ Documents
 echo "Documents folder remaped"
 
 echo "All folders remaped"
