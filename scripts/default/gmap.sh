@@ -82,6 +82,8 @@ fi
 if ["$movedata" = "y"]; then
  echo "Moving data now."
  move_data $actual_path
+ echo "Remaping folders now."
+ remap $actual_path
  else
   echo "User data will not be moved. Remapping folders now."
   remap $actual_path
