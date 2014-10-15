@@ -79,7 +79,7 @@ if ["$use_default_path" = "n"]; then
 fi
 
 
-if ["$movedata" = "y"]; then
+if ["$movedata" = "n"]; then
  echo "Moving data now."
  move_data $actual_path
  echo "Remaping folders now."
