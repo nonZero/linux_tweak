@@ -7,17 +7,14 @@
 
 #Exit function
 function app_exit {
-    echo $(date +%F).' '.$time.' '.'App exits normally' >> /logs/main.log
-    quit
-    }
+    echo $(date).' App exits normally.' >> ./logs/main.log }
 
 #Launch function
 function app_start {
     touch /logs/main.log
     touch ./config
     . ./config
-    echo $(date +%F).' '.$time.' '.'App started' >> /logs/main.log
-    }
+    echo $(date)' App started.' >> ./logs/main.log }
 
 #Generates menus    
 function main_menu {
@@ -28,10 +25,13 @@ function main_menu {
     echo " "
 if [ $1 = "0" ]; then
 PS3='Please enter your choice: '
-options=("Scripts" "Debs" "Quit")
+options=("Test Run" "Scripts" "Debs" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
+	"Test Run")
+	    main_menu 0
+	    ;;
         "Scripts")
             main_menu 1
             ;;
@@ -46,8 +46,7 @@ do
 done
  else
 	echo "Invalid argument. Exiting."
-fi
-    }
+fi }
 
 #end of functions creation
 
