@@ -64,7 +64,9 @@ mv ~/Documents/* ~/"$default_path"/Documents
   echo "All folders moved"
 }
 
-echo "You're about to remap your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n"
+clear
+
+echo "You're about to remap your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
 
 echo "Do you want to move existing data? (y/n)"
 
