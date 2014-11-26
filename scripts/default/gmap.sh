@@ -3,7 +3,7 @@
 
 function remap {
 
-default_path="Google\ Drive/Data"
+default_path="Google Drive/Data"
 
   if [ -n "$1" ]; then
    default_path = $1
@@ -13,19 +13,19 @@ default_path="Google\ Drive/Data"
 cd ~
 
 #Mapping Videos folder
-rm -r Videos/ && ln -s ~/$default_path/Videos/ Videos
+rm -r Videos/ && ln -s ~/"$default_path"/Videos/ Videos
 echo "Videos folder remaped"
 
 #Mapping Music folder
-rm -r Music/ && ln -s ~/$default_path/Music/ Music
+rm -r Music/ && ln -s ~/"$default_path"/Music/ Music
 echo "Music folder remaped"
 
 #Mapping Desktop folder
-rm -r Desktop/ && ln -s ~/$default_path/Desktop/ Desktop
+rm -r Desktop/ && ln -s ~/"$default_path"/Desktop/ Desktop
 echo "Desktop folder remaped"
 
 #Mapping Documents folder
-rm -r Documents/ && ln -s ~/$default_path/Documents/ Documents
+rm -r Documents/ && ln -s ~/"$default_path"/Documents/ Documents
 echo "Documents folder remaped"
 
 echo "All folders remaped"
@@ -36,26 +36,26 @@ function move_data {
   
   cd ~
   
-  $default_path="Google\ Drive/Data"
+  $default_path="Google Drive/Data"
   
   if [ -n "$1" ]; then
    default_path = $1
   fi
   
   echo "Moving Videos folder"
-  mv -r Videos $default_path/Videos
+mv -r Videos "$default_path"/Videos
   echo "Videos folder moved"
   
   echo "Moving Music folder"
-  mv -r Music $default_path/Music
+mv -r Music "$default_path"/Music
   echo "Music folder moved"
   
   echo "Moving Desktop folder"
-  mv -r Desktop $default_path/Desktop
+mv -r Desktop "$default_path"/Desktop
   echo "Desktop folder moved"
   
   echo "Moving Documents folder"
-  mv -r Documents $default_path/Documents
+mv -r Documents "$default_path"/Documents
   echo "Documents folder moved"
   
   echo "All folders moved"
@@ -81,10 +81,10 @@ fi
 
 if ["$movedata" = "n"]; then
  echo "Moving data now."
- move_data $actual_path
+move_data "$actual_path"
  echo "Remaping folders now."
- remap $actual_path
+remap "$actual_path"
  else
   echo "User data will not be moved. Remapping folders now."
-  remap $actual_path
+remap "$actual_path"
 fi
