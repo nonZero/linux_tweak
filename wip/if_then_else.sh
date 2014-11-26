@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$asdf" ]; then
-	echo asdf not existing
+	echo There is no asdf
 else
-	echo asdf does exist
+	echo asdf is here
 fi
