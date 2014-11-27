@@ -6,27 +6,20 @@ function remap {
 #Going to home folder
 cd ~
 
-#Checking whether we should use a different path
-if [ -z "$1" ]; then	
-	default_path="Google Drive/Data"
-	else
-	default_path=$1
-fi
-
 #Mapping Videos folder
-rm -r ~/Videos/ && ln -s ~/"$default_path"/Videos/ Videos
+rm -r ~/Videos/ && ln -s ~/"$1"/Videos/ Videos
 echo "Videos folder remaped"
 
 #Mapping Music folder
-rm -r ~/Music/ && ln -s ~/"$default_path"/Music/ Music
+rm -r ~/Music/ && ln -s ~/"$1"/Music/ Music
 echo "Music folder remaped"
 
 #Mapping Desktop folder
-rm -r ~/Desktop/ && ln -s ~/"$default_path"/Desktop/ Desktop
+rm -r ~/Desktop/ && ln -s ~/"$1"/Desktop/ Desktop
 echo "Desktop folder remaped"
 
 #Mapping Documents folder
-rm -r ~/Documents/ && ln -s ~/"$default_path"/Documents/ Documents
+rm -r ~/Documents/ && ln -s ~/"$1"/Documents/ Documents
 echo "Documents folder remaped"
 
 echo "All folders remaped"
@@ -38,72 +31,87 @@ function move_data {
 #Going to home folder 
 cd ~
 
-#Checking whether we should use a different path  
-if [ -z "$1" ]; then
-	default_path="Google Drive/Data"
-	else
-	default_path=$1
-  fi
-  
   echo "Moving Videos folder"
-mv ~/Videos/* ~/"$default_path"/Videos
+mv ~/Videos/* ~/"$1"/Videos
   echo "Videos folder moved"
   
   echo "Moving Music folder"
-mv ~/Music/* ~/"$default_path"/Music
+mv ~/Music/* ~/"$1"/Music
   echo "Music folder moved"
   
   echo "Moving Desktop folder"
-mv ~/Desktop/* ~/"$default_path"/Desktop
+mv ~/Desktop/* ~/"$1"/Desktop
   echo "Desktop folder moved"
   
   echo "Moving Documents folder"
-mv ~/Documents/* ~/"$default_path"/Documents
+mv ~/Documents/* ~/"$1"/Documents
   echo "Documents folder moved"
   
   echo "All folders moved"
 }
 
 clear
+#Welcome message
 
-echo "You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
-
-echo "Do you want to move existing data? (y/n)"
+echo "Google Drive re-mapping script by Gourenko Alex aka Lord_Phoenix"
+echo "----------------------------------------------------------------------------------------------------------"
+echo "|                                                                                                        |"
+echo "|You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n|"
+echo "|                                                                                                        |"
+echo "----------------------------------------------------------------------------------------------------------"
+echo "[Q] Do you want to move existing data? (y/n)"
 
 read -n1 -s movedata
 
-echo "Do you want to use default path to Google Drive? (~/Google Drive/Data) (y/n)"
-
-read -n1 -s use_default_path
-
-if [ "$use_default_path" = "n" ]; then
-
- echo "Please type path where Google Drive folder is located and press [Enter]"
- read actual_path
-
-else
-	
-	actual_path="Google Drive/Data"
-
-fi
+echo "[Q] Please type path where Google Drive folder (EXAMPLE: /home/'$username'/Google Drive) is located and press [Enter]"
+echo "NOTE: do not use escape symbols for folders like 'User\ Name'"
+	 
+read actual_path
 
 #now we are ready to start, showing summary first
 
 clear
 	
-printf "Please review imminent actions\n"
+printf "Please review imminent actions below\n"
 
 echo "Your Google Drive location is: $actual_path"
 
+case $movedata in
+	y)
+	echo "Your existing data will be moved to Google Drive first"
+	;;
+	n)
+	echo "Your existing data will NOT be moved to Google Drive"
+	;;
+	*)
+	echo "Data move question received wrong input. Program terminated, please start over"
+	exit 1
+	;;
+esac
 
-if [ "$movedata" = "y" ]; then
-	
+echo "------------------------------"
+echo "Do you wish to continue? (y/n)"
+
+read -n1 -s goon
+
+case $goon in
+	y)
+	if [ "$movedata" = "y" ]; then
 	echo "Moving data now."
 	move_data "$actual_path"
 	echo "Remaping folders now."
 	remap "$actual_path"
-
- else
- echo "User data will not be moved. Remapping folders now."
- remap "$actual_path"
-fi
+		else
+		echo "User data will not be moved. Remapping folders now."
+		remap "$actual_path"
+	fi
+	;;
+	n)
+	echo "Re-mapping aborted"
+	exit 1
+	;;
+	*)
+	echo "Incorrect input. Script terminated."
+	exit 1
+	;;
+esac
