@@ -51,22 +51,19 @@ mv ~/Documents/* ~/"$1"/Documents
 }
 
 clear
-#Welcome message
 
+#Welcome message
 echo "Google Drive re-mapping script by Gourenko Alex aka Lord_Phoenix"
-echo "----------------------------------------------------------------------------------------------------------"
-echo "|                                                                                                        |"
-echo "|You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n|"
-echo "|                                                                                                        |"
-echo "----------------------------------------------------------------------------------------------------------"
+echo ""
+printf "You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
 echo "[Q] Do you want to move existing data? (y/n)"
 
 read -n1 -s movedata
 
-echo "[Q] Please type path where Google Drive folder (EXAMPLE: /home/'$username'/Google Drive) is located and press [Enter]"
+echo "[Q] Please type path where Google Drive folder (EXAMPLE: /home/user/Google Drive) is located and press [Enter]"
 echo "NOTE: do not use escape symbols for folders like 'User\ Name'"
 	 
-read actual_path
+read -p "Path to Google Driver: " actual_path
 
 #now we are ready to start, showing summary first
 
@@ -93,6 +90,8 @@ echo "------------------------------"
 echo "Do you wish to continue? (y/n)"
 
 read -n1 -s goon
+
+#Now we act according to Go On var
 
 case $goon in
 	y)
