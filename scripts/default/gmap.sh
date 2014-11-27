@@ -66,26 +66,35 @@ mv ~/Documents/* ~/"$default_path"/Documents
 
 clear
 
-echo "You're about to remap your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
+echo "You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
 
 echo "Do you want to move existing data? (y/n)"
 
-read movedata
+read -n1 -s movedata
 
 echo "Do you want to use default path to Google Drive? (~/Google Drive/Data) (y/n)"
 
-read use_default_path
+read -n1 -s use_default_path
 
 if [ "$use_default_path" = "n" ]; then
 
- echo "Please type path where Test folder will be located and press [Enter]"
+ echo "Please type path where Google Drive folder is located and press [Enter]"
  read actual_path
 
 else
 	
 	actual_path="Google Drive/Data"
 
-fi	 
+fi
+
+#now we are ready to start, showing summary first
+
+clear
+	
+printf "Please review imminent actions\n"
+
+echo "Your Google Drive location is: $actual_path"
+
 
 if [ "$movedata" = "y" ]; then
 	
