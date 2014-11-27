@@ -5,49 +5,63 @@ function remap {
 
 #Going to home folder
 cd ~
-
-#Mapping Videos folder
+echo "Re-mapping folders now..."
+echo ""
+#Re-Mapping Videos folder
+echo "[Started] Re-mapping Videos folder"
 rm -r ~/Videos/ && ln -s ~/"$1"/Videos/ Videos
-echo "Videos folder remaped"
+echo "[Done] Videos folder re-mapped"
+echo ""
 
-#Mapping Music folder
+#Re-Mapping Music folder
+echo "[Started] Re-mapping Music folder"
 rm -r ~/Music/ && ln -s ~/"$1"/Music/ Music
-echo "Music folder remaped"
+echo "[Done] Music folder re-mapped"
+echo ""
 
-#Mapping Desktop folder
+#Re-Mapping Desktop folder
+echo "[Started] Re-mapping Desktop folder"
 rm -r ~/Desktop/ && ln -s ~/"$1"/Desktop/ Desktop
-echo "Desktop folder remaped"
+echo "[Done] Desktop folder re-mapped"
+echo ""
 
 #Mapping Documents folder
+echo "[Started] Re-mapping Documents folder"
 rm -r ~/Documents/ && ln -s ~/"$1"/Documents/ Documents
-echo "Documents folder remaped"
+echo "[Done] Documents folder re-mapped"
+echo ""
 
-echo "All folders remaped"
-
+echo "All folders re-mapped"
 }
 
 function move_data {
 
 #Going to home folder 
 cd ~
+echo "Moving existing data now"
+echo ""
 
-  echo "Moving Videos folder"
+echo "[Started] Moving Videos folder"
 mv ~/Videos/* ~/"$1"/Videos
-  echo "Videos folder moved"
+echo "[Done] Videos folder moved"
+echo ""
   
-  echo "Moving Music folder"
+echo "[Started] Moving Music folder"
 mv ~/Music/* ~/"$1"/Music
-  echo "Music folder moved"
+echo "[Done] Music folder moved"
+echo ""
   
-  echo "Moving Desktop folder"
+echo "[Started] Moving Desktop folder"
 mv ~/Desktop/* ~/"$1"/Desktop
-  echo "Desktop folder moved"
+echo "[Done] Desktop folder moved"
+echo ""
   
-  echo "Moving Documents folder"
+echo "[Started] Moving Documents folder"
 mv ~/Documents/* ~/"$1"/Documents
-  echo "Documents folder moved"
-  
-  echo "All folders moved"
+echo "[Done] Documents folder moved"
+echo ""
+
+echo "All folders moved"
 }
 
 clear
@@ -56,14 +70,15 @@ clear
 echo "Google Drive re-mapping script by Gourenko Alex aka Lord_Phoenix"
 echo ""
 printf "You're about to re-map your local folders (Documents, Pictures, Videos, Desktop) to your Google Drive\n\n"
-echo "[Q] Do you want to move existing data? (y/n)"
+echo "[Q] Do you want to move existing data?"
 
-read -n1 -s movedata
+read -n1 -s -p "(y/n)" movedata
 
+echo ""
 echo "[Q] Please type path where Google Drive folder (EXAMPLE: /home/user/Google Drive) is located and press [Enter]"
 echo "NOTE: do not use escape symbols for folders like 'User\ Name'"
 	 
-read -p "Path to Google Driver: " actual_path
+read -p "Path to Google Drive: " actual_path
 
 #now we are ready to start, showing summary first
 
@@ -81,7 +96,7 @@ case $movedata in
 	echo "Your existing data will NOT be moved to Google Drive"
 	;;
 	*)
-	echo "Data move question received wrong input. Program terminated, please start over"
+	echo "[Error] Data move question received wrong input. Program terminated, please start over"
 	exit 1
 	;;
 esac
@@ -96,12 +111,11 @@ read -n1 -s goon
 case $goon in
 	y)
 	if [ "$movedata" = "y" ]; then
-	echo "Moving data now."
 	move_data "$actual_path"
-	echo "Remaping folders now."
 	remap "$actual_path"
 		else
-		echo "User data will not be moved. Remapping folders now."
+		echo "User data will not be moved!"
+		echo ""
 		remap "$actual_path"
 	fi
 	;;
@@ -110,7 +124,7 @@ case $goon in
 	exit 1
 	;;
 	*)
-	echo "Incorrect input. Script terminated."
+	echo "[Error] Incorrect input. Script terminated."
 	exit 1
 	;;
 esac
