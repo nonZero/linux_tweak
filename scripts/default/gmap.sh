@@ -31,6 +31,12 @@ rm -r ~/Documents/ && ln -s ~/"$1"/Documents/ Documents
 echo "[Done] Documents folder re-mapped"
 echo ""
 
+#Mapping Pictures folder
+echo "[Started] Re-mapping Pictures folder"
+rm -r ~/Pictures/ && ln -s ~/"$1"/Pictures/ Pictures
+echo "[Done] Documents folder re-mapped"
+echo ""
+
 echo "All folders re-mapped"
 }
 
@@ -39,6 +45,11 @@ function move_data {
 #Going to home folder 
 cd ~
 echo "Moving existing data now"
+echo ""
+
+echo "[Started] Moving Pictures folder"
+mv ~/Pictures/* ~/"$1"/Pictures
+echo "[Done] Videos folder moved"
 echo ""
 
 echo "[Started] Moving Videos folder"
