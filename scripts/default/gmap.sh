@@ -9,31 +9,31 @@ echo "Re-mapping folders now..."
 echo ""
 #Re-Mapping Videos folder
 echo "[Started] Re-mapping Videos folder"
-rm -r ~/Videos/ && ln -s ~/"$1"/Videos/ Videos
+rm -r ~/Videos/ && ln -s "$1"/Videos/ Videos
 echo "[Done] Videos folder re-mapped"
 echo ""
 
 #Re-Mapping Music folder
 echo "[Started] Re-mapping Music folder"
-rm -r ~/Music/ && ln -s ~/"$1"/Music/ Music
+rm -r ~/Music/ && ln -s "$1"/Music/ Music
 echo "[Done] Music folder re-mapped"
 echo ""
 
 #Re-Mapping Desktop folder
 echo "[Started] Re-mapping Desktop folder"
-rm -r ~/Desktop/ && ln -s ~/"$1"/Desktop/ Desktop
+rm -r ~/Desktop/ && ln -s "$1"/Desktop/ Desktop
 echo "[Done] Desktop folder re-mapped"
 echo ""
 
 #Mapping Documents folder
 echo "[Started] Re-mapping Documents folder"
-rm -r ~/Documents/ && ln -s ~/"$1"/Documents/ Documents
+rm -r ~/Documents/ && ln -s "$1"/Documents/ Documents
 echo "[Done] Documents folder re-mapped"
 echo ""
 
 #Mapping Pictures folder
 echo "[Started] Re-mapping Pictures folder"
-rm -r ~/Pictures/ && ln -s ~/"$1"/Pictures/ Pictures
+rm -r ~/Pictures/ && ln -s "$1"/Pictures/ Pictures
 echo "[Done] Documents folder re-mapped"
 echo ""
 
@@ -48,27 +48,27 @@ echo "Moving existing data now"
 echo ""
 
 echo "[Started] Moving Pictures folder"
-mv ~/Pictures/* ~/"$1"/Pictures
+mv ~/Pictures/* "$1"/Pictures
 echo "[Done] Videos folder moved"
 echo ""
 
 echo "[Started] Moving Videos folder"
-mv ~/Videos/* ~/"$1"/Videos
+mv ~/Videos/* "$1"/Videos
 echo "[Done] Videos folder moved"
 echo ""
   
 echo "[Started] Moving Music folder"
-mv ~/Music/* ~/"$1"/Music
+mv ~/Music/* "$1"/Music
 echo "[Done] Music folder moved"
 echo ""
   
 echo "[Started] Moving Desktop folder"
-mv ~/Desktop/* ~/"$1"/Desktop
+mv ~/Desktop/* "$1"/Desktop
 echo "[Done] Desktop folder moved"
 echo ""
   
 echo "[Started] Moving Documents folder"
-mv ~/Documents/* ~/"$1"/Documents
+mv ~/Documents/* "$1"/Documents
 echo "[Done] Documents folder moved"
 echo ""
 
