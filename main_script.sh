@@ -46,8 +46,11 @@ do
 done
  else
 	echo "Invalid argument. Exiting."
-fi }
+fi
+}
 
 #end of functions creation
 
+app_start
 main_menu 0
+app_exit
